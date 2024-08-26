@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import Card from 'react-bootstrap/Card';
 
 const Player = ({ name, team, nationality, jerseyNumber, age, imageURL }) => {
@@ -15,6 +16,7 @@ const Player = ({ name, team, nationality, jerseyNumber, age, imageURL }) => {
   );
 };
 
+
 Player.defaultProps = {
   name: 'Unknown Player',
   team: 'Unknown Team',
@@ -22,6 +24,16 @@ Player.defaultProps = {
   jerseyNumber: 0,
   age: 'N/A',
   imageURL: 'https://via.placeholder.com/150'
+};
+
+
+Player.propTypes = {
+  name: PropTypes.string,
+  team: PropTypes.string,
+  nationality: PropTypes.string,
+  jerseyNumber: PropTypes.number,
+  age: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  imageURL: PropTypes.string,
 };
 
 export default Player;
